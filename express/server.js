@@ -16,6 +16,8 @@ router.get('/', (req, res) => {
   res.end();
 });
 
+router.get('/another', (req, res) => res.json({ route: req.originalUrl }));
+
 app.use('/.netlify/functions/server', router);  // path must route to lambda
 
 module.exports = app;
